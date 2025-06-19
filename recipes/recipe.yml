@@ -23,6 +23,8 @@ modules:
       - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-42.noarch.rpm
       - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-42.noarch.rpm
       - https://download.docker.com/linux/fedora/docker-ce.repo
+      - https://copr.fedorainfracloud.org/coprs/abn/throttled/repo/fedora-42/abn-throttled-fedora-42.repo
+      - https://copr.fedorainfracloud.org/coprs/sneexy/python-validity/repo/fedora-42/sneexy-python-validity-fedora-42.repo
     install:
       - vim
       - neovim
@@ -44,9 +46,16 @@ modules:
       - docker-buildx-plugin
       - docker-compose-plugin
       - steam-devices
+      - throttled
+      - open-fprintd
+      - fprintd-clients
+      - fprintd-clients-pam
+      - python3-validity
     remove:
       - firefox
       - firefox-langpacks
+      - fprintd 
+      - fprintd-pam
 
   - type: dnf
     # install the Fedora Virtualization group
