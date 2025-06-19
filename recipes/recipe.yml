@@ -53,7 +53,7 @@ modules:
     group-install:
       with-optional: false
       packages:
-        - "Virtualization"
+        - virtualization
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished
