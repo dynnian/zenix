@@ -15,12 +15,13 @@ modules:
   - type: files
     files:
       - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+        destination: / # copies files/system/* into your image's root folder /
 
   - type: rpm-ostree
     repos:
       - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
-      - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-42.noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-42.noarch.rpm
+      - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-42.noarch.rpm
+      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-42.noarch.rpm
       - https://download.docker.com/linux/fedora/docker-ce.repo
     install:
       - vim
@@ -43,14 +44,19 @@ modules:
       - docker-buildx-plugin
       - docker-compose-plugin
       - steam-devices
-    group-install:
-      - virtualization
     remove:
       - firefox
       - firefox-langpacks
 
+  - type: dnf
+    # install the Fedora Virtualization group
+    group-install:
+      with-optional: false
+      packages:
+        - "Virtualization"
+
   - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
+    notify: true # Send notification after install/uninstall is finished
     system:
       install:
         - org.kde.elisa
