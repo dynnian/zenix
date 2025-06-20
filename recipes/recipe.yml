@@ -66,7 +66,7 @@ modules:
         - virtualization
 
   - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished
+    notify: false # Send notification after install/uninstall is finished
     system:
       install:
         - org.kde.elisa
@@ -83,7 +83,6 @@ modules:
         - io.dbeaver.DBeaverCommunity
         - io.github.Qalculate
         - md.obsidian.Obsidian
-        - org.ferdium.Ferdium
         - org.geogebra.GeoGebra
         - org.gimp.GIMP
         - org.inkscape.Inkscape
@@ -94,13 +93,13 @@ modules:
         - org.onlyoffice.desktopeditors
         - org.qbittorrent.qBittorrent
         - org.signal.Signal
+        - com.rtosta.zapzap
         - org.tenacityaudio.Tenacity
         - rest.insomnia.Insomnia
         - org.freac.freac
         - org.rncbc.qpwgraph
         - com.github.Flacon
         - org.kde.kdiff3
-        - org.kde.kommit
         - org.kde.isoimagewriter
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
