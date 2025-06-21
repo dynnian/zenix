@@ -40,6 +40,7 @@ modules:
       - kate
       - krename
       - yakuake
+      - okular
       - docker-ce
       - docker-ce-cli
       - containerd.io
