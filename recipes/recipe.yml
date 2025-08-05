@@ -68,45 +68,45 @@ modules:
 
   - type: default-flatpaks
     configurations:
-      notify: false # Send notification after install/uninstall is finished
-      scope: system
-      repo:
-        url: https://dl.flathub.org/repo/flathub.flatpakrepo
-        name: flathub
-        title: Flathub
-      install:
-        - org.kde.elisa
-        - org.videolan.VLC
-        - ch.protonmail.protonmail-bridge
-        - com.bitwarden.desktop
-        - com.github.jeromerobert.pdfarranger
-        - com.github.xournalpp.xournalpp
-        - com.jgraph.drawio.desktop
-        - com.nextcloud.desktopclient.nextcloud
-        - com.obsproject.Studio
-        - com.protonvpn.www
-        - fr.handbrake.ghb
-        - io.dbeaver.DBeaverCommunity
-        - io.github.Qalculate
-        - md.obsidian.Obsidian
-        - org.geogebra.GeoGebra
-        - org.gimp.GIMP
-        - org.inkscape.Inkscape
-        - org.kde.kdenlive
-        - org.kde.krita
-        - org.mozilla.Thunderbird
-        - org.mozilla.firefox
-        - org.onlyoffice.desktopeditors
-        - org.qbittorrent.qBittorrent
-        - org.signal.Signal
-        - com.rtosta.zapzap
-        - org.tenacityaudio.Tenacity
-        - rest.insomnia.Insomnia
-        - org.freac.freac
-        - org.rncbc.qpwgraph
-        - com.github.Flacon
-        - org.kde.kdiff3
-        - org.kde.isoimagewriter
-
+      - scope: user
+        repo:
+          # you can override the title to make inclusion of both system and user repos clearer
+          title: Flathub (user)
+        install:
+          - org.kde.elisa
+          - org.videolan.VLC
+          - org.kde.isoimagewriter
+      - notify: true
+        scope: system
+        repo:
+          title: Flathub (system)
+        install:
+          - ch.protonmail.protonmail-bridge
+          - com.bitwarden.desktop
+          - com.github.jeromerobert.pdfarranger
+          - com.github.xournalpp.xournalpp
+          - com.jgraph.drawio.desktop
+          - com.nextcloud.desktopclient.nextcloud
+          - com.obsproject.Studio
+          - com.protonvpn.www
+          - fr.handbrake.ghb
+          - io.dbeaver.DBeaverCommunity
+          - io.github.Qalculate
+          - md.obsidian.Obsidian
+          - org.geogebra.GeoGebra
+          - org.gimp.GIMP
+          - org.inkscape.Inkscape
+          - org.kde.kdenlive
+          - org.kde.krita
+          - org.mozilla.Thunderbird
+          - org.mozilla.firefox
+          - org.onlyoffice.desktopeditors
+          - org.qbittorrent.qBittorrent
+          - org.signal.Signal
+          - org.ferdium.Ferdium
+          - org.tenacityaudio.Tenacity
+          - rest.insomnia.Insomnia
+          - org.freac.freac
+          - org.rncbc.qpwgraph
+          - com.github.Flacon
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
-
