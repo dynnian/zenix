@@ -71,9 +71,9 @@ modules:
       notify: false # Send notification after install/uninstall is finished
       scope: system
       repo:
-        - url: https://dl.flathub.org/repo/flathub.flatpakrepo
-        - name: flathub
-        - title: Flathub
+        url: https://dl.flathub.org/repo/flathub.flatpakrepo
+        name: flathub
+        title: Flathub
       install:
         - org.kde.elisa
         - org.videolan.VLC
