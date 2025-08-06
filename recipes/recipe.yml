@@ -6,7 +6,7 @@ name: zenix
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/kinoite-main
+base-image: ghcr.io/ublue-os/silverblue-main
 image-version: 42 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -37,10 +37,6 @@ modules:
       - fd-find
       - fish
       - terra-release
-      - kate
-      - krename
-      - yakuake
-      - okular
       - docker-ce
       - docker-ce-cli
       - containerd.io
@@ -52,12 +48,15 @@ modules:
       - fprintd-clients
       - fprintd-clients-pam
       - python3-validity
+      - baobab
+      - cryfs
     remove:
       - firefox
       - firefox-langpacks
       - fprintd 
       - fprintd-pam
       - thermald
+      - gnome-system-monitor
 
   - type: dnf
     # install the Fedora Virtualization group
@@ -70,43 +69,29 @@ modules:
     configurations:
       - scope: system
         repo:
-          # you can override the title to make inclusion of both system and user repos clearer
-          title: Flathub (user)
-        install:
-          - org.kde.elisa
-          - org.videolan.VLC
-          - org.kde.isoimagewriter
-      - notify: true
-        scope: user
-        repo:
           title: Flathub (system)
         install:
-          - ch.protonmail.protonmail-bridge
-          - com.bitwarden.desktop
-          - com.github.jeromerobert.pdfarranger
-          - com.github.xournalpp.xournalpp
-          - com.jgraph.drawio.desktop
-          - com.nextcloud.desktopclient.nextcloud
-          - com.obsproject.Studio
-          - com.protonvpn.www
-          - fr.handbrake.ghb
-          - io.dbeaver.DBeaverCommunity
-          - io.github.Qalculate
-          - md.obsidian.Obsidian
-          - org.geogebra.GeoGebra
-          - org.gimp.GIMP
-          - org.inkscape.Inkscape
-          - org.kde.kdenlive
-          - org.kde.krita
-          - org.mozilla.Thunderbird
+          - org.gnome.Papers
+          - org.gnome.Loupe
+          - org.gnome.SimpleScan
+          - org.gnome.Characters
+          - org.gnome.Decibels
+          - org.gnome.Logs
+          - org.gnome.Contacts
+          - org.gnome.font-viewer
+          - org.gnome.Maps
+          - org.gnome.clocks
+          - org.gnome.Weather
+          - org.gnome.TextEditor
+          - org.gnome.Calendar
+          - com.mattjakeman.ExtensionManager
+          - io.gitlab.adhami3310.Impression
+          - org.gnome.seahorse.Application
+          - org.gnome.Connections
+          - org.gnome.Snapshot
+          - org.gnome.Calculator
+          - page.tesk.Refine
+          - io.github.realmazharhussain.GdmSettings
           - org.mozilla.firefox
-          - org.onlyoffice.desktopeditors
-          - org.qbittorrent.qBittorrent
-          - org.signal.Signal
-          - org.ferdium.Ferdium
-          - org.tenacityaudio.Tenacity
-          - rest.insomnia.Insomnia
-          - org.freac.freac
-          - org.rncbc.qpwgraph
-          - com.github.Flacon
+          - io.missioncenter.MissionCenter
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
