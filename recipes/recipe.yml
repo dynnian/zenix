@@ -68,7 +68,7 @@ modules:
 
   - type: default-flatpaks
     configurations:
-      - scope: user
+      - scope: system
         repo:
           # you can override the title to make inclusion of both system and user repos clearer
           title: Flathub (user)
@@ -77,7 +77,7 @@ modules:
           - org.videolan.VLC
           - org.kde.isoimagewriter
       - notify: true
-        scope: system
+        scope: user
         repo:
           title: Flathub (system)
         install:
