@@ -51,6 +51,8 @@ modules:
       - baobab
       - cryfs
       - adw-gtk3-theme
+      - gnome-shell-extension-pop-shell
+      - xprop
     remove:
       - firefox
       - firefox-langpacks
