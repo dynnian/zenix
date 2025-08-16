@@ -18,6 +18,8 @@ modules:
         destination: / # copies files/system/* into your image's root folder /
 
   - type: rpm-ostree
+    keys:
+      - https://packages.microsoft.com/keys/microsoft.asc
     repos:
       - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
       - https://download.docker.com/linux/fedora/docker-ce.repo
