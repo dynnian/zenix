@@ -79,6 +79,7 @@ modules:
       - texlive-scheme-basic
       - typst
       - nerd-fonts
+      - code
     remove:
       - firefox
       - firefox-langpacks
