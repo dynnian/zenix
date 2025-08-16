@@ -53,6 +53,30 @@ modules:
       - adw-gtk3-theme
       - gnome-shell-extension-pop-shell
       - xprop
+      - dotnet-sdk-8.0
+      - dotnet-sdk-9.0
+      - dotnet-sdk-8.0-source-built-artifacts
+      - dotnet-sdk-9.0-source-built-artifacts
+      - aspnetcore-runtime-8.0
+      - aspnetcore-runtime-9.0
+      - java-21-openjdk
+      - java-latest-openjdk
+      - rust
+      - rust-analyzer
+      - cargo
+      - golang
+      - gopls
+      - nodejs
+      - nodejs-npm
+      - llvm
+      - clang
+      - cmake
+      - meson
+      - ninja-build
+      - pandoc
+      - texlive-scheme-basic
+      - typst
+      - nerd-fonts
     remove:
       - firefox
       - firefox-langpacks
@@ -67,6 +91,8 @@ modules:
       with-optional: false
       packages:
         - virtualization
+        - c-development
+        - development-tools
 
   - type: default-flatpaks
     configurations:
