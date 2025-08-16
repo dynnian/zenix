@@ -25,6 +25,7 @@ modules:
       - https://download.docker.com/linux/fedora/docker-ce.repo
       - https://copr.fedorainfracloud.org/coprs/abn/throttled/repo/fedora-42/abn-throttled-fedora-42.repo
       - https://copr.fedorainfracloud.org/coprs/sneexy/python-validity/repo/fedora-42/sneexy-python-validity-fedora-42.repo
+      - vscode.repo
     install:
       - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-42.noarch.rpm
       - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-42.noarch.rpm
