@@ -54,7 +54,6 @@ modules:
       - baobab
       - cryfs
       - adw-gtk3-theme
-      - gnome-shell-extension-pop-shell
       - xprop
       - dotnet-sdk-8.0
       - dotnet-sdk-9.0
