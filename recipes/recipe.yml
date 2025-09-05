@@ -6,7 +6,7 @@ name: zenix
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/kinoite-main
 image-version: 42 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -18,14 +18,11 @@ modules:
         destination: / # copies files/system/* into your image's root folder /
 
   - type: rpm-ostree
-    keys:
-      - https://packages.microsoft.com/keys/microsoft.asc
     repos:
       - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
       - https://download.docker.com/linux/fedora/docker-ce.repo
       - https://copr.fedorainfracloud.org/coprs/abn/throttled/repo/fedora-42/abn-throttled-fedora-42.repo
       - https://copr.fedorainfracloud.org/coprs/sneexy/python-validity/repo/fedora-42/sneexy-python-validity-fedora-42.repo
-      - vscode.repo
     install:
       - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-42.noarch.rpm
       - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-42.noarch.rpm
@@ -51,42 +48,15 @@ modules:
       - fprintd-clients
       - fprintd-clients-pam
       - python3-validity
-      - baobab
       - cryfs
-      - adw-gtk3-theme
-      - xprop
-      - dotnet-sdk-8.0
-      - dotnet-sdk-9.0
-      - dotnet-sdk-8.0-source-built-artifacts
-      - dotnet-sdk-9.0-source-built-artifacts
-      - aspnetcore-runtime-8.0
-      - aspnetcore-runtime-9.0
-      - java-21-openjdk
-      - java-latest-openjdk
-      - rust
-      - rust-analyzer
-      - cargo
-      - golang
-      - gopls
-      - nodejs
-      - nodejs-npm
-      - llvm
-      - clang
-      - cmake
-      - meson
-      - ninja-build
-      - pandoc
-      - texlive-scheme-basic
-      - typst
-      - nerd-fonts
-      - code
+      - krename
+      - yakuake
     remove:
       - firefox
       - firefox-langpacks
       - fprintd 
       - fprintd-pam
       - thermald
-      - gnome-system-monitor
 
   - type: dnf
     # install the Fedora Virtualization group
@@ -94,8 +64,6 @@ modules:
       with-optional: false
       packages:
         - virtualization
-        - c-development
-        - development-tools
 
   - type: default-flatpaks
     configurations:
@@ -103,29 +71,9 @@ modules:
         repo:
           title: Flathub (system)
         install:
-          - org.gnome.Papers
-          - org.gnome.Loupe
-          - org.gnome.SimpleScan
-          - org.gnome.Characters
-          - org.gnome.Decibels
-          - org.gnome.Logs
-          - org.gnome.Contacts
-          - org.gnome.font-viewer
-          - org.gnome.Maps
-          - org.gnome.clocks
-          - org.gnome.Weather
-          - org.gnome.TextEditor
-          - org.gnome.Calendar
-          - com.mattjakeman.ExtensionManager
-          - io.gitlab.adhami3310.Impression
-          - org.gnome.seahorse.Application
-          - org.gnome.Connections
-          - org.gnome.Snapshot
-          - org.gnome.Calculator
-          - page.tesk.Refine
-          - io.github.realmazharhussain.GdmSettings
-          - org.mozilla.firefox
-          - io.missioncenter.MissionCenter
-          - com.github.tchx84.Flatseal
-          - page.codeberg.libre_menu_editor.LibreMenuEditor
+          - com.brave.Browser
+          - org.kde.elisa
+          - org.kde.kate
+          - org.videolan.VLC
+          - io.github.DenysMb.Kontainer
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
